@@ -22,8 +22,6 @@
 	Where the key is a local/UNC path to a replicated folder and the value is the UNC path to the replicated copy.
 	.PARAMETER Directories
 	Hash of local=remote directories where the file will be created then read. (Check the example)
-	.PARAMETER Action
-	Type of response to send. Default is PRTG, a text output. User customisable for email etc.
 	.PARAMETER ReplWait
 	Time to wait for the check file to replicate in seconds. Default is 50.
 	.PARAMETER Cleanup
@@ -38,7 +36,6 @@
 [cmdletbinding()]
 Param(
   [ValidateNotNull()] [hashtable]$Directories,
-  [string]$Action = 'PRTG',
   [int]$ReplWait = 50,
   [switch]$Cleanup
 )
