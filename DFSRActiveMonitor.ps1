@@ -18,7 +18,7 @@
 	max. 1/hour
 	min. 1/day
 	.EXAMPLE
-	DFSRBruteForce.ps1 -Directories @{'C:\temp'='\\server2\temp';'\\server2\d$\Shares\test'='\\server3\d$\Shares\test'}
+	DFSRActiveMonitor.ps1 -Directories @{'C:\temp'='\\server2\temp';'\\server2\d$\Shares\test'='\\server3\d$\Shares\test'}
 	Where the key is a local/UNC path to a replicated folder and the value is the UNC path to the replicated copy.
 	.PARAMETER Directories
 	Hash of local=remote directories where the file will be created then read. (Check the example)
@@ -41,7 +41,7 @@ Param(
 )
 
 $errors = @()
-$filename = "$(Get-Date -Format 'yymmdd-HHmmss').drt"
+$filename = "$(Get-Date -Format 'yyMMdd-HHmmss').drt"
 $filecont = "Time of file generation = $([DateTimeOffset]::Now.ToUnixTimeSeconds())"
 
 ############################################
